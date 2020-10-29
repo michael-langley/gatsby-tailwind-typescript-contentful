@@ -15,10 +15,11 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     resolve(
       graphql(`
         {
-          allContentfulBlog {
+          allContentfulBlogPost {
             edges {
               node {
                 id
+                slug
               }
             }
           }
@@ -27,12 +28,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         if (result.errors) {
           reject(result.errors);
         }
-        result.data.allContentfulBlog.edges.forEach((edge) => {
+        result.data.allContentfulBlogPost.edges.forEach((edge) => {
           createPage({
-            path: edge.node.id,
+            path: edge.node.slug,
             component: blogPostTemplate,
             context: {
-              slug: edge.node.id,
+              slug: edge.node.slug,
             },
           });
         });

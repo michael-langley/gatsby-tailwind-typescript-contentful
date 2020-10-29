@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Typescript Tailwind`,
@@ -52,8 +54,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: {
-        spaceId: '',
-        accessToken: '',
+        spaceId: process.env.GATSBY_SPACE_ID,
+        accessToken: process.env.GATSBY_DELIVERY_API_KEY,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
