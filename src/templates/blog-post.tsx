@@ -2,7 +2,8 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Img from 'gatsby-image';
-
+import { PrimaryButton } from 'react-component-library';
+import 'react-component-library/build/index.css';
 interface Props {
   data: any;
 }
@@ -18,6 +19,8 @@ const BlogPost = (props: Props) => {
       <div className="h-64 w-64 overflow-hidden">
         <Img fluid={photos[0].fluid} key={photos[0].fluid.src} alt={photos[0].title} />
       </div>
+
+      <PrimaryButton>Hello</PrimaryButton>
 
       <div>
         {edges.map((edge: any) => {
