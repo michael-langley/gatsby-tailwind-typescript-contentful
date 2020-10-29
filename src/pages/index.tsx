@@ -1,9 +1,7 @@
-import React, { ReactElement, useState } from "react"
+import React, { ReactElement, useState } from 'react';
 
-interface Props {}
-
-function Index({}: Props): ReactElement {
-  const [isMenuOpen, setMenuOpen] = useState(false)
+function Index(): ReactElement {
+  const [isMenuOpen, setMenuOpen] = useState(false);
   return (
     <>
       <div>
@@ -18,31 +16,23 @@ function Index({}: Props): ReactElement {
             >
               <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
             </svg>
-            <span className="font-semibold text-xl tracking-tight">
-              Gatsby TypeScript Tailwind CSS
-            </span>
+            <span className="font-semibold text-xl tracking-tight">Gatsby TypeScript Tailwind CSS</span>
           </div>
           <div className="block lg:hidden">
             <button
               onClick={() => {
-                setMenuOpen(isMenuOpen => !isMenuOpen)
+                setMenuOpen((isMenuOpen) => !isMenuOpen);
               }}
               className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white"
             >
-              <svg
-                className="fill-current h-3 w-3"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <title>Menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
               </svg>
             </button>
           </div>
           <div
-            className={`w-full ${
-              isMenuOpen ? "block" : "hidden"
-            } lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
+            className={`w-full ${isMenuOpen ? 'block' : 'hidden'} lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
           >
             <div className="text-sm lg:flex-grow">
               <a
@@ -77,17 +67,12 @@ function Index({}: Props): ReactElement {
       </div>
       <div className="container max-w-md mx-auto mt-10">
         <div className="rounded overflow-hidden shadow-lg">
-          <img
-            className="w-full"
-            src="https://tailwindcss.com/img/card-top.jpg"
-            alt="Sunset in the mountains"
-          />
+          <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" />
           <div className="px-6 py-4">
             <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
             <p className="text-gray-700 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Voluptatibus quia, nulla! Maiores et perferendis eaque,
-              exercitationem praesentium nihil.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
+              eaque, exercitationem praesentium nihil.
             </p>
           </div>
           <div className="px-6 py-4">
@@ -104,7 +89,7 @@ function Index({}: Props): ReactElement {
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default Index
+export default Index;
